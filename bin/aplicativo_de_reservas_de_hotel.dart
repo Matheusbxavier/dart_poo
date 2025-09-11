@@ -4,14 +4,13 @@ Durante a implementação inicial, surgiram algumas necessidades de melhoria, co
 void main() {
   List<int> quartosReservados = [1,2,3,5,8];
   
-  Cliente clienteJoaoMiguel = Cliente("Joao Miguel", [4,6]);
+  Cliente clienteJoaoMiguel = Cliente("Joao Miguel", []);
   
-  print(clienteJoaoMiguel.nome);
   clienteJoaoMiguel.fazerReserva(7);
-  clienteJoaoMiguel.cancelarRerva(4);
+  clienteJoaoMiguel.fazerReserva(6);
+  clienteJoaoMiguel.fazerReserva(5);
+  clienteJoaoMiguel.cancelarRerva(7);
   
-  
-
 }
 
 class Cliente {
@@ -20,17 +19,25 @@ class Cliente {
 
   Cliente(this.nome, this._reservas);
 
-  void fazerReserva (int numero) {
-    _reservas.add(numero);
-    print(_reservas);
+  void fazerReserva (int quarto) {
+    _reservas.add(quarto);
+    print("Sua reserva do quarto $quarto foi realizada com sucesso");
+    _mostrarReserva();
+    
   }
 
-  void cancelarRerva (int numero) {
-    if (_reservas.contains(numero)) {
-      _reservas.remove(numero);
-      print(_reservas);
+  void cancelarRerva (int quarto) {
+    if (_reservas.contains(quarto)) {
+      _reservas.remove(quarto);
+      print("Sua reserva do quarto $quarto foi cancelada");
+      _mostrarReserva();
     }else {
       print("Reserva Invalida");
     }
+  }
+
+  void _mostrarReserva () {
+    print("Cliente $nome, suas reservas ativas são $_reservas");
+    print("---------------");
   }
 }
