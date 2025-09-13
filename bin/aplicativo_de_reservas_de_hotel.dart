@@ -2,8 +2,7 @@
 Durante a implementação inicial, surgiram algumas necessidades de melhoria, como garantir a privacidade dos dados e otimizar a organização do código.*/
 
 void main() {
-  List<int> quartosReservados = [1,2,3,5,8];
-  
+    
   Cliente clienteJoaoMiguel = Cliente("Joao Miguel", []);
   
   clienteJoaoMiguel.fazerReserva(7);
