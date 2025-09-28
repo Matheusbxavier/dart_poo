@@ -1,26 +1,23 @@
 void main() {
-  Cachorro cachorroDeMaria = Cachorro("Jaice");
+  Cachorro cachorroDeMaria = Cachorro();
   cachorroDeMaria.abanarRabo();
   cachorroDeMaria.emitirSom();
 
-  Gato gatoDeJoao = Gato("Lasanha");
+  Gato gatoDeJoao = Gato();
   gatoDeJoao.arranhaMoveis();
   gatoDeJoao.emitirSom();
 }
 
-class Animal {
-  String nome;
-
-  Animal(this.nome);
-
+abstract class Animal {
+  
   void emitirSom() {
-    print("O $nome está fazendo som");
+    print("O animal está fazendo som");
   }
+
 }
 
-class Cachorro extends Animal {
-  Cachorro(super.nome);
-
+class Cachorro implements Animal {
+  
   @override
   void emitirSom() {
     print("O cachorro late.");
@@ -31,9 +28,8 @@ class Cachorro extends Animal {
   }
 }
 
-class Gato extends Animal {
-  Gato(super.nome);
-
+class Gato implements Animal {
+ 
   @override
   void emitirSom() {
      print("O gato miou.");
@@ -42,4 +38,5 @@ class Gato extends Animal {
   void arranhaMoveis() {
     print("O gato está arranhando os móveis");
   }
+
 }

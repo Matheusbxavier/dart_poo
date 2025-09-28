@@ -7,7 +7,7 @@ void main() {
   sal.detalhes();
 }
 
-class Ingredientes {
+abstract class Ingredientes {
   String nome;
   String tipo;
 

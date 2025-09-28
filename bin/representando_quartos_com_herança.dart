@@ -13,7 +13,7 @@ void main() {
   quartoLuxo.calcularValorTotal();
 }
 
-class Quarto {
+abstract class Quarto {
   String tipo;
   double valorDiaria;
   int diarias;
